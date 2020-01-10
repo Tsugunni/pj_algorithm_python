@@ -12,7 +12,13 @@
         },
         "categories": {
             "auth": {
-                "algorithmpython34c062ae": {}
+                "algorithmpython34c062ae": {
+                    "facebookAppIdUserPool": "3362728410436218",
+                    "facebookAppSecretUserPool": "6c6c03e4ff282b7e6e1c2cacdd055e1b",
+                    "googleAppIdUserPool": "1033136402217-6pt5c5pec74r7qsksoq08a1h4lbnhhfu.apps.googleusercontent.com",
+                    "googleAppSecretUserPool": "Qoa02MuQSrGr7kXMh-hk-7IP",
+                    "hostedUIProviderCreds": "[{\"ProviderName\":\"Facebook\",\"client_id\":\"3362728410436218\",\"client_secret\":\"6c6c03e4ff282b7e6e1c2cacdd055e1b\"},{\"ProviderName\":\"Google\",\"client_id\":\"1033136402217-6pt5c5pec74r7qsksoq08a1h4lbnhhfu.apps.googleusercontent.com\",\"client_secret\":\"Qoa02MuQSrGr7kXMh-hk-7IP\"}]"
+                }
             }
         }
     }
