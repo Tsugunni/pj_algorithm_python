@@ -1,0 +1,62 @@
+{
+    "identityPoolName": "algorithmpython34c062ae_identitypool_34c062ae",
+    "allowUnauthenticatedIdentities": false,
+    "openIdLambdaRoleName": "algori34c062ae_openid_lambda_role",
+    "resourceNameTruncated": "algori34c062ae",
+    "userPoolName": "algorithmpython34c062ae_userpool_34c062ae",
+    "autoVerifiedAttributes": [
+        "email"
+    ],
+    "mfaConfiguration": "OFF",
+    "mfaTypes": [
+        "SMS Text Message"
+    ],
+    "smsAuthenticationMessage": "Your authentication code is {####}",
+    "smsVerificationMessage": "Your verification code is {####}",
+    "emailVerificationSubject": "Your verification code",
+    "emailVerificationMessage": "Your verification code is {####}",
+    "defaultPasswordPolicy": false,
+    "passwordPolicyMinLength": 8,
+    "passwordPolicyCharacters": [],
+    "requiredAttributes": [
+        "email"
+    ],
+    "userpoolClientName": "algori34c062ae_app_client",
+    "userpoolClientGenerateSecret": true,
+    "userpoolClientRefreshTokenValidity": 30,
+    "userpoolClientWriteAttributes": [
+        "email"
+    ],
+    "userpoolClientReadAttributes": [
+        "email"
+    ],
+    "mfaLambdaRole": "algori34c062ae_totp_lambda_role",
+    "userpoolClientLambdaRole": "algori34c062ae_userpoolclient_lambda_role",
+    "userpoolClientSetAttributes": false,
+    "resourceName": "algorithmpython34c062ae",
+    "authSelections": "identityPoolAndUserPool",
+    "authRoleName": {
+        "Ref": "AuthRoleName"
+    },
+    "unauthRoleName": {
+        "Ref": "UnauthRoleName"
+    },
+    "authRoleArn": {
+        "Fn::GetAtt": [
+            "AuthRole",
+            "Arn"
+        ]
+    },
+    "unauthRoleArn": {
+        "Fn::GetAtt": [
+            "UnauthRole",
+            "Arn"
+        ]
+    },
+    "useDefault": "default",
+    "usernameAttributes": [
+        "email"
+    ],
+    "additionalQuestions": [],
+    "dependsOn": []
+}
