@@ -5,9 +5,15 @@ import React, { useState } from 'react';
 import { Platform, StatusBar, StyleSheet, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
-import AppNavigator from './navigation/AppNavigator';
+import { withAuthenticator } from 'aws-amplify-react-native';
 
-export default function App(props) {
+import AppNavigator from './navigation/AppNavigator';
+import awsconfig from './aws-exports';
+import Amplify, { Auth } from 'aws-amplify';
+
+Amplify.configure(awsconfig);
+
+function App(props) {
   const [isLoadingComplete, setLoadingComplete] = useState(false);
 
   if (!isLoadingComplete && !props.skipLoadingScreen) {
@@ -27,6 +33,12 @@ export default function App(props) {
     );
   }
 }
+
+export default withAuthenticator(App, {
+  signUpConfig: {
+    hiddenDefaults: ['phone_number']
+  }
+});
 
 async function loadResourcesAsync() {
   await Promise.all([
