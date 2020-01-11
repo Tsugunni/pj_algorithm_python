@@ -1,4 +1,6 @@
 import * as WebBrowser from 'expo-web-browser';
+import SyntaxHighlighter from 'react-native-syntax-highlighter';
+import { docco } from 'react-syntax-highlighter/styles/hljs';
 import React from 'react';
 import {
   Image,
@@ -10,29 +12,43 @@ import {
   View,
 } from 'react-native';
 
+import { Card, ListItem, Button, Icon } from 'react-native-elements'
+
 import { MonoText } from '../components/StyledText';
 
 export default function HomeScreen() {
+  const codeString = '(num) => num + 1';
   return (
     <View style={styles.container}>
       <ScrollView
         style={styles.container}
         contentContainerStyle={styles.contentContainer}>
-        <View style={styles.welcomeContainer}>
-          <Image
-            source={
-              __DEV__
-                ? require('../assets/images/robot-dev.png')
-                : require('../assets/images/robot-prod.png')
-            }
-            style={styles.welcomeImage}
-          />
-        </View>
+        <Card
+          title='BINARY SEARCH'>
+          <Text style={{ marginBottom: 10 }}>
+            BINARY SEARCH'の説明The idea with React Native Elements is more about component structure than actual design.
+          </Text>
+          <Button
+            icon={<Icon name='code' color='#ffffff' />}
+            buttonStyle={{ borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 0 }}
+            title='コードをみる' />
+        </Card>
 
-        <View style={styles.getStartedContainer}>
+        <Card
+          title='LINEAR SEARCH'>
+          <Text style={{ marginBottom: 10 }}>
+            The idea with React Native Elements is more about component structure than actual design.
+          </Text>
+          <Button
+            icon={<Icon name='code' color='#ffffff' />}
+            buttonStyle={{ borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 0 }}
+            title='コードをみる' />
+        </Card>
+
+        {/* <View style={styles.getStartedContainer}>
           <DevelopmentModeNotice />
 
-          <Text style={styles.getStartedText}>Done is better than perfect</Text>
+          <Text style={styles.getStartedText}>Pythonで学ぶアルゴリズム</Text>
 
           <View
             style={[styles.codeHighlightContainer, styles.homeScreenFilename]}>
@@ -42,7 +58,7 @@ export default function HomeScreen() {
           <Text style={styles.getStartedText}>
             2日間頑張ろう
           </Text>
-        </View>
+        </View> */}
 
       </ScrollView>
 
