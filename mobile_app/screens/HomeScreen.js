@@ -1,6 +1,5 @@
 import * as WebBrowser from 'expo-web-browser';
-import SyntaxHighlighter from 'react-native-syntax-highlighter';
-import { docco } from 'react-syntax-highlighter/styles/hljs';
+
 import React from 'react';
 import {
   Image,
@@ -17,7 +16,6 @@ import { Card, ListItem, Button, Icon } from 'react-native-elements'
 import { MonoText } from '../components/StyledText';
 
 export default function HomeScreen() {
-  const codeString = '(num) => num + 1';
   return (
     <View style={styles.container}>
       <ScrollView
