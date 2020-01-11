@@ -19,7 +19,7 @@ import { docco } from 'react-syntax-highlighter/styles/hljs';
 
 
 const LinksScreen = () => {
-  const codeString = 'ddd';
+  const codeString = 'N = int(input())\nA = list(map(int, input().split()))\nans = float(0)\nfor a in A:\n   ans += 1/a\nprint(1/ans)';
   return (
     <SyntaxHighlighter language="python" style={docco}>
       {codeString}

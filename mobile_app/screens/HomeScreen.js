@@ -11,52 +11,43 @@ import {
   View,
 } from 'react-native';
 
-import { Card, ListItem, Button, Icon } from 'react-native-elements'
+import { Card, ListItem, Button, Icon } from 'react-native-elements';
 
 import { MonoText } from '../components/StyledText';
 
+import { Algorithms } from '../constants/Algorithms';
 export default function HomeScreen() {
   return (
     <View style={styles.container}>
       <ScrollView
         style={styles.container}
         contentContainerStyle={styles.contentContainer}>
-        <Card
-          title='BINARY SEARCH'>
-          <Text style={{ marginBottom: 10 }}>
-            BINARY SEARCH'の説明The idea with React Native Elements is more about component structure than actual design.
-          </Text>
-          <Button
-            icon={<Icon name='code' color='#ffffff' />}
-            buttonStyle={{ borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 0 }}
-            title='コードをみる' />
-        </Card>
-
-        <Card
-          title='LINEAR SEARCH'>
-          <Text style={{ marginBottom: 10 }}>
-            The idea with React Native Elements is more about component structure than actual design.
-          </Text>
-          <Button
-            icon={<Icon name='code' color='#ffffff' />}
-            buttonStyle={{ borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 0 }}
-            title='コードをみる' />
-        </Card>
-
-        {/* <View style={styles.getStartedContainer}>
-          <DevelopmentModeNotice />
-
-          <Text style={styles.getStartedText}>Pythonで学ぶアルゴリズム</Text>
-
-          <View
-            style={[styles.codeHighlightContainer, styles.homeScreenFilename]}>
-            <MonoText>ホーム画面</MonoText>
-          </View>
-
-          <Text style={styles.getStartedText}>
-            2日間頑張ろう
-          </Text>
-        </View> */}
+        {/* {
+          Algorithms.map((u, i) => {
+            <Card
+              title={u.title}>
+              <Text style={{ marginBottom: 10 }}>
+                {u.description}
+              </Text>
+              <Button
+                icon={<Icon name='code' color='#ffffff' />}
+                buttonStyle={{ borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 0 }}
+                title='コードをみる' />
+            </Card>
+          })
+        } */}
+        {Algorithms.map(({ title, description, code_block }, i) => (
+          <Card
+            title={title} key={i}>
+            <Text style={{ marginBottom: 10 }}>
+              {description}
+            </Text>
+            <Button
+              icon={<Icon name='code' color='#ffffff' />}
+              buttonStyle={{ borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 0 }}
+              title='コードをみる' />
+          </Card>
+        ))}
 
       </ScrollView>
 
