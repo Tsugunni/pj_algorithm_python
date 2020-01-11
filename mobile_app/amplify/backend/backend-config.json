@@ -1,9 +1,9 @@
 {
-	"auth": {
-		"algorithmpython34c062ae": {
-			"service": "Cognito",
-			"providerPlugin": "awscloudformation",
-			"dependsOn": []
-		}
-	}
+    "auth": {
+        "algorithmpython34c062ae": {
+            "service": "Cognito",
+            "providerPlugin": "awscloudformation",
+            "dependsOn": []
+        }
+    }
 }
