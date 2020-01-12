@@ -8,7 +8,7 @@ class Graph:
     def addEdge(self, u, v):
         self.graph[u].append(v)
 
-    def DFS(self, start: int, goal: int) -> bool:
+    def DepthFirstSearch(self, start: int, goal: int) -> bool:
         suggestions = [start]
         seen = []
         while suggestions:
@@ -36,4 +36,4 @@ g.addEdge(2, 0)
 g.addEdge(2, 3)
 g.addEdge(3, 3)
 
-g.DFS(0, 3)
+g.DepthFirstSearch(0, 3)
