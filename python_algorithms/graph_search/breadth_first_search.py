@@ -9,7 +9,7 @@ class Graph:
     def addEdge(self, u, v):
         self.graph[u].append(v)
 
-    def BFS(self, start: int, goal: int) -> bool:
+    def breadthFirstSearch(self, start: int, goal: int) -> bool:
         suggestions = deque()
         suggestions.append(start)
         seen = []
@@ -38,4 +38,4 @@ g.addEdge(2, 0)
 g.addEdge(2, 3)
 g.addEdge(3, 3)
 
-g.BFS(2, 5)
+g.breadthFirstSearch(2, 0)
