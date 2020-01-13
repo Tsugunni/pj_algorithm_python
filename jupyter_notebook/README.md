@@ -27,7 +27,10 @@
 > jupyter_notebook/contents/.
 
 以下に.ipynbというjupyter notebookで実行できるファイルがある
+<<<<<<< HEAD
  
 ## 4.Jupyter Notebookの仮想環境から抜ける
 
 > deactivate
+=======
+>>>>>>> 8036296aa11374ede7fc2cd647f443aa3484dfa3

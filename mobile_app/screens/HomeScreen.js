@@ -1,4 +1,5 @@
 import * as WebBrowser from 'expo-web-browser';
+
 import React from 'react';
 import {
   Image,
@@ -10,39 +11,43 @@ import {
   View,
 } from 'react-native';
 
+import { Card, ListItem, Button, Icon } from 'react-native-elements';
+
 import { MonoText } from '../components/StyledText';
 
+import { Algorithms } from '../constants/Algorithms';
 export default function HomeScreen() {
   return (
     <View style={styles.container}>
       <ScrollView
         style={styles.container}
         contentContainerStyle={styles.contentContainer}>
-        <View style={styles.welcomeContainer}>
-          <Image
-            source={
-              __DEV__
-                ? require('../assets/images/robot-dev.png')
-                : require('../assets/images/robot-prod.png')
-            }
-            style={styles.welcomeImage}
-          />
-        </View>
-
-        <View style={styles.getStartedContainer}>
-          <DevelopmentModeNotice />
-
-          <Text style={styles.getStartedText}>Done is better than perfect</Text>
-
-          <View
-            style={[styles.codeHighlightContainer, styles.homeScreenFilename]}>
-            <MonoText>ホーム画面</MonoText>
-          </View>
-
-          <Text style={styles.getStartedText}>
-            2日間頑張ろう
-          </Text>
-        </View>
+        {/* {
+          Algorithms.map((u, i) => {
+            <Card
+              title={u.title}>
+              <Text style={{ marginBottom: 10 }}>
+                {u.description}
+              </Text>
+              <Button
+                icon={<Icon name='code' color='#ffffff' />}
+                buttonStyle={{ borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 0 }}
+                title='コードをみる' />
+            </Card>
+          })
+        } */}
+        {Algorithms.map(({ title, description, code_block }, i) => (
+          <Card
+            title={title} key={i}>
+            <Text style={{ marginBottom: 10 }}>
+              {description}
+            </Text>
+            <Button
+              icon={<Icon name='code' color='#ffffff' />}
+              buttonStyle={{ borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 0 }}
+              title='コードをみる' />
+          </Card>
+        ))}
 
       </ScrollView>
 
