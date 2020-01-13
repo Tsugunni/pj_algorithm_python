@@ -28,6 +28,6 @@
 
 以下に.ipynbというjupyter notebookで実行できるファイルがある
  
-## 4.Jupyter Notebookの仮想環境から抜ける
+## 4.virtualenvで作成した.venv仮想環境から抜ける
 
 > deactivate
