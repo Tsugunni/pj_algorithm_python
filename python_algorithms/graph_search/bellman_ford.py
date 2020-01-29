@@ -1,6 +1,6 @@
 class Graph:
     class Edge:
-        def __init__(self, _from, _to, _cost):
+        def __init__(self, _from: int, _to: int, _cost: int):
             self.from_ = _from
             self.to = _to
             self.cost = _cost
@@ -10,19 +10,19 @@ class Graph:
         self.v_set = set()
 
     @property
-    def E(self):
+    def E(self) -> int:
         return len(self.edges)
 
     @property
-    def V(self):
+    def V(self) -> int:
         return len(self.v_set)
 
-    def add(self, _from, _to, _cost):
+    def add(self, _from: int, _to: int, _cost: int):
         self.edges.append(self.Edge(_from, _to, _cost))
         self.v_set.add(_from)
         self.v_set.add(_to)
 
-    def shortest_path(self, s):
+    def shortest_path(self, s: int) -> list:
         d = [float("inf")] * self.V
         d[s] = 0
         while True:

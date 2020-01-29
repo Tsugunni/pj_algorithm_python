@@ -2,7 +2,7 @@ import heapq
 import itertools
 
 
-def astar(init_pos, goal):
+def astar(init_pos: tuple, goal: tuple) -> list:
     passed_list = [init_pos]
     init_score = distance(passed_list) + heuristic(init_pos)
     checked = {init_pos: init_score}
@@ -45,7 +45,7 @@ dungeon = [
 ]
 
 
-def find_ch(ch):
+def find_ch(ch: str) -> tuple:
     for i, l in enumerate(dungeon):
         for j, c in enumerate(l):
             if c == ch:
@@ -56,7 +56,7 @@ init = find_ch("S")
 goal = find_ch("G")
 
 
-def nexts(pos):
+def nexts(pos: tuple):
     wall = "O"
 
     for a, b in itertools.product([" + 1", " - 1", ""], repeat=2):
@@ -65,15 +65,15 @@ def nexts(pos):
                 yield (eval("pos[0]" + a), eval("pos[1]" + b))
 
 
-def heuristic(pos):
+def heuristic(pos: tuple) -> float:
     return ((pos[0] - goal[0]) ** 2 + (pos[1] - goal[1]) ** 2) ** 0.5
 
 
-def distance(path):
+def distance(path: list) -> int:
     return len(path)
 
 
-def render_path(path):
+def render_path(path: list) -> list:
     buf = [[ch for ch in l] for l in dungeon]
 
     for pos in path[1:-1]:
@@ -92,3 +92,19 @@ if len(path) > 0:
 
 else:
     print("failed")
+
+
+# Run result
+
+#   OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+#   Os  O  *  O  *  O         O    ****  O
+#   O **O**O**O**O**********  O   *OOOO*gO
+#   O   *  O  *  O  O   OOOO* O   *O  OOOO
+#   OOOOOOOOOOOOOOOOOO  O    *O   *O**   O
+#   O                O  O    *O    *  *  O
+#   O        OOO     O  O    *OOOOOOOOO* O
+#   O  OO    O    OOOO  O    *O ***  OO *O
+#   O   O    O          O    *O* O * O * O
+#   O   OOO  O          O     *  O  *O*  O
+#   O        O          O        O   *   O
+#   OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
