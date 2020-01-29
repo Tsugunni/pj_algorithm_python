@@ -1,7 +1,4 @@
 {
-    "identityPoolName": "algorithmpython34c062ae_identitypool_34c062ae",
-    "allowUnauthenticatedIdentities": false,
-    "openIdLambdaRoleName": "algori34c062ae_openid_lambda_role",
     "resourceNameTruncated": "algori34c062ae",
     "userPoolName": "algorithmpython34c062ae_userpool_34c062ae",
     "autoVerifiedAttributes": [
@@ -13,9 +10,9 @@
     ],
     "smsAuthenticationMessage": "Your authentication code is {####}",
     "smsVerificationMessage": "Your verification code is {####}",
-    "emailVerificationSubject": "Your verification code",
-    "emailVerificationMessage": "Your verification code is {####}",
-    "defaultPasswordPolicy": false,
+    "emailVerificationSubject": "Eメールをご確認ください",
+    "emailVerificationMessage": "認証コードは '{####}'です",
+    "defaultPasswordPolicy": true,
     "passwordPolicyMinLength": 8,
     "passwordPolicyCharacters": [],
     "requiredAttributes": [
@@ -33,8 +30,9 @@
     "mfaLambdaRole": "algori34c062ae_totp_lambda_role",
     "userpoolClientLambdaRole": "algori34c062ae_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
+    "openIdLambdaRoleName": "algori34c062ae_openid_lambda_role",
     "resourceName": "algorithmpython34c062ae",
-    "authSelections": "identityPoolAndUserPool",
+    "authSelections": "userPoolOnly",
     "authRoleName": {
         "Ref": "AuthRoleName"
     },
@@ -53,24 +51,45 @@
             "Arn"
         ]
     },
-    "useDefault": "defaultSocial",
+    "useDefault": "manual",
     "usernameAttributes": [
         "email"
     ],
     "additionalQuestions": [],
     "dependsOn": [],
-    "hostedUI": true,
-    "hostedUIDomainName": "pjalgorithmpython239u402",
+    "hostedUI": false,
     "newCallbackURLs": [
         "exp://127.0.0.1:19000/"
     ],
     "newLogoutURLs": [
         "exp://127.0.0.1:19000/"
     ],
-    "authProvidersUserPool": [
-        "Facebook",
-        "Google"
+    "AllowedOAuthFlows": [
+        "code"
     ],
-    "hostedUIProviderMeta": "[{\"ProviderName\":\"Facebook\",\"authorize_scopes\":\"email,public_profile\",\"AttributeMapping\":{\"email\":\"email\",\"username\":\"id\"}},{\"ProviderName\":\"Google\",\"authorize_scopes\":\"openid email profile\",\"AttributeMapping\":{\"email\":\"email\",\"username\":\"sub\"}}]",
-    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"exp://127.0.0.1:19000/\"],\"LogoutURLs\":[\"exp://127.0.0.1:19000/\"]}"
+    "AllowedOAuthScopes": [
+        "phone",
+        "email",
+        "openid",
+        "profile",
+        "aws.cognito.signin.user.admin"
+    ],
+    "CallbackURLs": [
+        "exp://127.0.0.1:19000/"
+    ],
+    "LogoutURLs": [
+        "exp://127.0.0.1:19000/"
+    ],
+    "facebookAuthorizeScopes": [
+        "email",
+        "public_profile"
+    ],
+    "googleAuthorizeScopes": [
+        "openid email profile"
+    ],
+    "triggers": "{}",
+    "parentStack": {
+        "Ref": "AWS::StackId"
+    },
+    "permissions": []
 }
