@@ -39,6 +39,7 @@ class Graph:
         return d
 
 
+# Run example
 g = Graph()
 g.add(0, 1, 5)
 g.add(0, 2, 4)
@@ -51,3 +52,8 @@ g.add(3, 5, 3)
 g.add(4, 5, 4)
 
 path = g.shortest_path(0)
+print(path)
+
+
+# Run result
+# [0, 5, 3, 5, 4, 7]

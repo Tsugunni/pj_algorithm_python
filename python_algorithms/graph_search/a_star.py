@@ -57,6 +57,7 @@ def astar(init_pos: tuple, goal: tuple) -> list:
     return []
 
 
+# Run example
 if __name__ == "__main__":
     dungeon = [
         "OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO",
@@ -76,18 +77,21 @@ if __name__ == "__main__":
     goal = _find_ch("G")
     path = astar(init, goal)
     start_goal_map = "\n".join(_render_path(path))
-    """
-    start_goal_map
-    OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
-    Os  O  *  O  *  O         O    ****  O
-    O **O**O**O**O**********  O   *OOOO*gO
-    O   *  O  *  O  O   OOOO* O   *O  OOOO
-    OOOOOOOOOOOOOOOOOO  O    *O   *O**   O
-    O                O  O    *O    *  *  O
-    O        OOO     O  O    *OOOOOOOOO* O
-    O  OO    O    OOOO  O    *O ***  OO *O
-    O   O    O          O    *O* O * O * O
-    O   OOO  O          O     *  O  *O*  O
-    O        O          O        O   *   O
-    OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
-    """
+    print(start_goal_map)
+
+
+# Run result
+"""
+OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+Os  O  *  O  *  O         O    ****  O
+O **O**O**O**O**********  O   *OOOO*gO
+O   *  O  *  O  O   OOOO* O   *O  OOOO
+OOOOOOOOOOOOOOOOOO  O    *O   *O**   O
+O                O  O    *O    *  *  O
+O        OOO     O  O    *OOOOOOOOO* O
+O  OO    O    OOOO  O    *O ***  OO *O
+O   O    O          O    *O* O * O * O
+O   OOO  O          O     *  O  *O*  O
+O        O          O        O   *   O
+OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+"""

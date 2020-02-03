@@ -43,7 +43,4 @@ print(g.breadthFirstSearch(2, 0))
 
 
 # Run result
-
-#
 # True
-#

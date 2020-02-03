@@ -1,27 +1,27 @@
 class Graph:
     class Edge:
-        def __init__(self, _to, _cost):
+        def __init__(self, _to: int, _cost: int):
             self.to = _to
             self.cost = _cost
 
-    def __init__(self, V):
+    def __init__(self, V) -> int:
         self.G = [[] for i in range(V)]
         self._E = 0
         self._V = V
 
     @property
-    def E(self):
+    def E(self) -> int:
         return self._E
 
     @property
-    def V(self):
+    def V(self) -> int:
         return self._V
 
-    def add(self, _from, _to, _cost):
+    def add(self, _from: int, _to: int, _cost: int):
         self.G[_from].append(self.Edge(_to, _cost))
         self._E += 1
 
-    def shortest_path(self, s):
+    def shortest_path(self, s: int) -> list:
         import heapq
 
         que = []
@@ -51,6 +51,7 @@ def sample1():
     g.add(5, 6, 100)
 
     d = g.shortest_path(1)
+    print(d)
 
 
 def sample2():
@@ -90,3 +91,15 @@ def sample2():
     g.add(7, 6, 2)
 
     d = g.shortest_path(0)
+    print(d)
+
+
+# Run example
+if __name__ == "__main__":
+    sample1()
+    sample2()
+
+
+# Run result
+# [inf, 0, 200, inf, inf, inf, inf, inf, 201, inf]
+# [0, 1, 6, 2, 3, 4, 7, 9]
