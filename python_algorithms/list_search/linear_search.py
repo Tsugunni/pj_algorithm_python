@@ -8,3 +8,12 @@ def linear_search(nums: list, target: int) -> int:
             break
     if result == 1:
         return index
+
+
+# Run example
+my_list = [1, 3, 5, 7, 9]
+print(linear_search(my_list, 9))
+
+
+# Run result
+# 4
