@@ -1,4 +1,4 @@
-def merge(left, right):
+def merge(left: list, right: list) -> list:
     n = len(left + right)
     s = max(left + right) + 1
 
@@ -11,6 +11,7 @@ def merge(left, right):
 
     return a
 
+
 def mergeSort(nums: list) -> list:
     if len(nums) == 1:
         return nums
@@ -20,3 +21,12 @@ def mergeSort(nums: list) -> list:
     right = mergeSort(nums[mid:])
 
     return merge(left, right)
+
+
+# Run example
+nums = [5, 8, 2, 4, 1, 0]
+print(mergeSort(nums))
+
+
+# Run result
+# [0, 1, 2, 4, 5, 8]
