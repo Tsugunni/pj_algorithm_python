@@ -1,4 +1,4 @@
-# pattern1
+# pattern1 (use library)
 from heapq import heappush
 from heapq import heappop
 
@@ -11,6 +11,7 @@ def linked_heap_sort(nums: list) -> list:
         nums.append(heappop(heap))
 
     return nums
+
 
 
 # pattern2
@@ -26,7 +27,7 @@ def heap_sort(nums: list) -> list:
     return nums
 
 
-def _siftdown(heap, startpos, pos):
+def _siftdown(heap: list, startpos: int, pos: int):
     newitem = heap[pos]
     while pos > startpos:
         parentpos = (pos - 1) >> 1
@@ -39,7 +40,7 @@ def _siftdown(heap, startpos, pos):
     heap[pos] = newitem
 
 
-def _siftup(heap, pos, endpos):
+def _siftup(heap: list, pos: int, endpos: int):
     startpos = pos
     newitem = heap[pos]
     childpos = 2 * pos + 1
@@ -54,7 +55,17 @@ def _siftup(heap, pos, endpos):
     _siftdown(heap, startpos, pos)
 
 
-def heapify(x):
+def heapify(x: list):
     n = len(x)
     for i in reversed(range(n // 2)):
         _siftup(x, i, n)
+
+
+# Run example
+nums = [5, 8, 2, 4, 1, 0]
+print(linked_heap_sort(nums))
+print(heap_sort(nums))
+
+
+# Run result
+# [0, 1, 2, 4, 5, 8]
